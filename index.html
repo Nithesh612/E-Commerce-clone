@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thunder Gear | Pro Esports Gaming Peripherals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Rajdhani:wght@600;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandPurple: '#6c5ce7',
+            brandCyan: '#00c2ff',
+            brandDark: '#08070d',
+          }
+        }
+      }
+    }
+  </script>
+  <link href='style.css' rel='stylesheet'>
+  <link rel="icon" href="Assets/logo.png" type="icon">
+</head>
+
+<body>
+
+  <header class="main-header">
+    <div class="header-nav">
+      <a href="#" class="logo">
+        <div class="logo-icon-wrap">
+          <img src="Assets/logo-h.png" alt="Thunder Gear Logo">
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-text">THUNDER</span>
+          <span class="logo-subtext">GEAR ESPORTS</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#products" class="nav-link">Arsenal</a></li>
+          <li><a href="#categories" class="nav-link">Categories</a></li>
+
+          <li><a href="#about" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="data-search">
+        <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="product-search-input" placeholder="Search gear (Mice, Keys...)" autocomplete="off">
+          <span class="search-shortcut">⌘K</span>
+        </div>
+
+        <div class="cart-wrapper">
+          <button class="cart-btn" aria-label="Cart" title="View Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span id="cart-badge" class="cart-badge">0</span>
+          </button>
+        </div>
+
+        <button class="login-btn" id="header-login-btn">
+          <span class="login-status-dot"></span>
+          <span>Sign In</span>
+        </button>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Nav -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="mobile-nav-link">Home</a></li>
+        <li><a href="#products" class="mobile-nav-link">Arsenal</a></li>
+        <li><a href="#categories" class="mobile-nav-link">Categories</a></li>
+        <li><a href="#deals" class="mobile-nav-link">Specials</a></li>
+        <li><a href="#about" class="mobile-nav-link">About Us</a></li>
+        <li><a href="cart.html" class="mobile-nav-link">Battle Cart</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div id="home" class="intro">
+    <h1>Elevate your Gaming<br> Experience</h1>
+    <p style="color:#f5f5f5;">Next level immersion and performance with our premium esports gaming gear</p>
+    <a href="#products" class="shopnow">DISCOVER MORE</a>
+  </div>
+
+
+  <section id="categories" class="categories">
+    <div>
+      <h2>Categories</h2>
+      <div class="select">
+        <div class="selected-item" data-category="mouse">
+          <img src="Assets/mouse.png" alt="Mouse">
+          <p>Mouse</p>
+        </div>
+        <div class="selected-item" data-category="keyboard">
+          <img src="Assets/key.png" alt="Keyboard">
+          <p>Keyboard</p>
+        </div>
+        <div class="selected-item" data-category="controller">
+          <img src="Assets/controller1.png" alt="Controller">
+          <p>Controller</p>
+        </div>
+        <div class="selected-item" data-category="pc">
+          <img src="Assets/pc.png" alt="Computers">
+          <p>Computers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="products" class="products-section">
+    <div class="section-header">
+      <div class="section-tag"><span class="tag-pulse"></span> FEATURED ARSENAL</div>
+      <h2 class="section-title">Upgrade Your <span class="gradient-text">Battle Station</span></h2>
+      <p class="section-subtitle">Tournament-grade precision, zero latency, and ultra-durable build quality designed for
+        esports champions.</p>
+
+      <!-- Category Filter Tabs -->
+      <div class="product-filter-tabs">
+        <button class="filter-tab active" data-filter="all">All Arsenal</button>
+        <button class="filter-tab" data-filter="mouse">Mice</button>
+        <button class="filter-tab" data-filter="controller">Controllers</button>
+        <button class="filter-tab" data-filter="keyboard">Keyboards</button>
+        <button class="filter-tab" data-filter="audio">Audio</button>
+        <button class="filter-tab" data-filter="pc">Battlestations</button>
+      </div>
+    </div>
+
+    <div class="products-wrapper">
+      <button class="scroll-arrow scroll-left" id="scroll-left" aria-label="Scroll left">&#8249;</button>
+
+      <div class="products-grid products" id="products-grid">
+
+        <!-- Product 1 -->
+        <div class="product-card" data-category="mouse">
+          <div class="card-badge badge-hot">🔥 BESTSELLER</div>
+          <button class="wishlist-btn" aria-label="Save to wishlist" title="Wishlist">♥</button>
+          <div class="card-image-wrap">
+            <img src="Assets/products1.png" alt="Razer Viper Mini Signature">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Gaming Mouse</span>
+            <h3 class="product-name">Razer Viper Mini</h3>
+            <p class="product-desc">Signature Edition • 8000Hz HyperPolling • 49g Magnesium Shell</p>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-num">4.9</span>
+              <span class="review-count">(148)</span>
+            </div>
+            <div class="card-footer-info">
+              <div class="price-box">
+                <span class="original-price">₹3,499</span>
+                <span class="price">₹2,000</span>
+              </div>
+              <span class="stock-tag in-stock">● In Stock</span>
+            </div>
+            <div class="card-actions">
+              <button class="buy-now" data-id="razer-viper-mini">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-category="mouse">
+          <div class="card-badge badge-sale">⚡ 35% OFF</div>
+          <button class="wishlist-btn" aria-label="Save to wishlist" title="Wishlist">♥</button>
+          <div class="card-image-wrap">
+            <img src="Assets/products2.png" alt="Logitech G502 X Lightspeed">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Gaming Mouse</span>
+            <h3 class="product-name">Logitech G502 X</h3>
+            <p class="product-desc">Lightspeed Plus Wireless • Lightforce Hybrid Switches • RGB</p>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-num">4.8</span>
+              <span class="review-count">(215)</span>
+            </div>
+            <div class="card-footer-info">
+              <div class="price-box">
+                <span class="original-price">₹2,299</span>
+                <span class="price">₹1,500</span>
+              </div>
+              <span class="stock-tag in-stock">● In Stock</span>
+            </div>
+            <div class="card-actions">
+              <button class="buy-now" data-id="logitech-g502x">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-category="controller">
+          <div class="card-badge badge-limited">🕷️ LIMITED EDITION</div>
+          <button class="wishlist-btn" aria-label="Save to wishlist" title="Wishlist">♥</button>
+          <div class="card-image-wrap">
+            <img src="Assets/soiderman.png" alt="Sony Spider-Man 2 Wireless Controller">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Pro Controller</span>
+            <h3 class="product-name">Sony Spider-Man 2</h3>
+            <p class="product-desc">DualSense PS5 Wireless • Haptic Feedback & Adaptive Triggers</p>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-num">5.0</span>
+              <span class="review-count">(340)</span>
+            </div>
+            <div class="card-footer-info">
+              <div class="price-box">
+                <span class="original-price">₹6,990</span>
+                <span class="price">₹5,800</span>
+              </div>
+              <span class="stock-tag in-stock">● Low Stock</span>
+            </div>
+            <div class="card-actions">
+              <button class="buy-now" data-id="sony-spiderman-controller">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-category="mouse">
+          <div class="card-badge badge-new">✨ PRO EDITION</div>
+          <button class="wishlist-btn" aria-label="Save to wishlist" title="Wishlist">♥</button>
+          <div class="card-image-wrap">
+            <img src="Assets/products4.png" alt="Logitech G502 X Hero">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Gaming Mouse</span>
+            <h3 class="product-name">Logitech G502 Hero</h3>
+            <p class="product-desc">HERO 25K Sensor • Sub-micron Precision • 13 Programmable Controls</p>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-num">4.9</span>
+              <span class="review-count">(182)</span>
+            </div>
+            <div class="card-footer-info">
+              <div class="price-box">
+                <span class="original-price">₹2,800</span>
+                <span class="price">₹2,000</span>
+              </div>
+              <span class="stock-tag in-stock">● In Stock</span>
+            </div>
+            <div class="card-actions">
+              <button class="buy-now" data-id="logitech-g502-hero">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card" data-category="controller">
+          <div class="card-badge badge-hot">🎮 TOP RATED</div>
+          <button class="wishlist-btn" aria-label="Save to wishlist" title="Wishlist">♥</button>
+          <div class="card-image-wrap">
+            <img src="Assets/product3.png" alt="Microsoft Xbox Elite Controller">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Pro Controller</span>
+            <h3 class="product-name">Xbox Elite Series 2</h3>
+            <p class="product-desc">Adjustable-Tension Thumbsticks • Bluetooth & Xbox Wireless • 40hr Battery</p>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-num">4.9</span>
+              <span class="review-count">(310)</span>
+            </div>
+            <div class="card-footer-info">
+              <div class="price-box">
+                <span class="original-price">₹8,499</span>
+                <span class="price">₹6,999</span>
+              </div>
+              <span class="stock-tag in-stock">● In Stock</span>
+            </div>
+            <div class="card-actions">
+              <button class="buy-now" data-id="xbox-elite-controller">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: Keyboard -->
+        <div class="product-card" data-category="keyboard">
+          <div class="card-badge badge-new">⚡ RGB OPTICAL</div>
+          <button class="wishlist-btn" aria-label="Save to wishlist" title="Wishlist">♥</button>
+          <div class="card-image-wrap">
+            <img src="Assets/key.png" alt="ThunderStrike RGB Mechanical Keyboard">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Mechanical Keyboard</span>
+            <h3 class="product-name">ThunderStrike Pro</h3>
+            <p class="product-desc">Hot-Swappable Optical Red Switches • PBT Keycaps • Per-Key RGB</p>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-num">4.9</span>
+              <span class="review-count">(94)</span>
+            </div>
+            <div class="card-footer-info">
+              <div class="price-box">
+                <span class="original-price">₹5,499</span>
+                <span class="price">₹3,899</span>
+              </div>
+              <span class="stock-tag in-stock">● In Stock</span>
+            </div>
+            <div class="card-actions">
+              <button class="buy-now" data-id="thunderstrike-keyboard">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7: Audio -->
+        <div class="product-card" data-category="audio">
+          <div class="card-badge badge-sale">🎧 7.1 SPATIAL</div>
+          <button class="wishlist-btn" aria-label="Save to wishlist" title="Wishlist">♥</button>
+          <div class="card-image-wrap">
+            <img src="Assets/head3.png" alt="ThunderAudio Void 7.1 Pro Headset">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Audio & Headset</span>
+            <h3 class="product-name">ThunderVoid 7.1</h3>
+            <p class="product-desc">Lossless 2.4GHz Wireless • 50mm Titanium Drivers • Noise Canceling Mic</p>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-num">4.8</span>
+              <span class="review-count">(167)</span>
+            </div>
+            <div class="card-footer-info">
+              <div class="price-box">
+                <span class="original-price">₹6,200</span>
+                <span class="price">₹4,499</span>
+              </div>
+              <span class="stock-tag in-stock">● In Stock</span>
+            </div>
+            <div class="card-actions">
+              <button class="buy-now" data-id="thundervoid-headset">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8: Battlestation PC -->
+        <div class="product-card" data-category="pc">
+          <div class="card-badge badge-limited">🚀 ULTRA TIER</div>
+          <button class="wishlist-btn" aria-label="Save to wishlist" title="Wishlist">♥</button>
+          <div class="card-image-wrap">
+            <img src="Assets/pc.png" alt="Thunder Titan RTX Gaming PC">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Battlestations</span>
+            <h3 class="product-name">Thunder Titan PC</h3>
+            <p class="product-desc">Intel Core i9-14900K • RTX 4080 Super • 64GB DDR5 • Custom Liquid Loop</p>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-num">5.0</span>
+              <span class="review-count">(72)</span>
+            </div>
+            <div class="card-footer-info">
+              <div class="price-box">
+                <span class="original-price">₹2,10,000</span>
+                <span class="price">₹1,84,999</span>
+              </div>
+              <span class="stock-tag in-stock">● Pre-Built</span>
+            </div>
+            <div class="card-actions">
+              <button class="buy-now" data-id="thunder-titan-pc">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="scroll-arrow scroll-right" id="scroll-right" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </section>
+
+
+  <!-- IMMERSIVE VIDEO ARENA / DUALSENSE SHOWCASE -->
+  <section id="deals" class="video-showcase-section">
+    <div class="video-showcase-header">
+      <div class="section-tag"><span class="tag-pulse"></span> HARDWARE REEL & IMMERSIVE PREVIEW</div>
+      <h2 class="section-title">Astro Bot & DualSense <span class="gradient-text">Pro Cinema Arena</span></h2>
+      <p class="section-subtitle">Experience next-gen haptics, zero-drift Hall Effect actuation, and dynamic adaptive triggers in real-time gaming simulations.</p>
+    </div>
+
+    <div class="cinema-grid">
+      <!-- Cinema Card 1: Astro Bot Edition -->
+      <div class="cinema-card">
+        <div class="cinema-media-wrap">
+          <div class="cinema-hud-top">
+            <span class="cinema-badge live"><span class="dot"></span> 4K 60FPS REEL</span>
+            <div class="cinema-controls">
+              <button class="cinema-ctrl-btn video-mute-btn" data-video="vid-astro" title="Toggle Sound">
+                <span class="sound-icon">🔇</span>
+              </button>
+              <button class="cinema-ctrl-btn video-play-btn" data-video="vid-astro" title="Play / Pause">
+                <span class="play-icon">⏸️</span>
+              </button>
+            </div>
+          </div>
+          <video id="vid-astro" src="Assets/Astro%20Bot%20PS5.mp4" autoplay muted loop playsinline></video>
+          <div class="cinema-media-overlay"></div>
+        </div>
+        <div class="cinema-content">
+          <div class="cinema-tag-row">
+            <span class="cinema-edition">LIMITED EDITION</span>
+            <span class="cinema-spec-pill">PS5 & PC Ready</span>
+          </div>
+          <h3 class="cinema-title">Astro Bot Joyful Limited Edition</h3>
+          <p class="cinema-desc">Dynamic dual-actuator haptic feedback and ergonomic tactile microswitches tuned for ultra-responsive competitive play.</p>
+          <div class="cinema-specs-grid">
+            <div class="spec-node">
+              <span class="spec-label">Actuation</span>
+              <span class="spec-val">0.2ms Speed</span>
+            </div>
+            <div class="spec-node">
+              <span class="spec-label">Battery</span>
+              <span class="spec-val">18h Lithium-Ion</span>
+            </div>
+            <div class="spec-node">
+              <span class="spec-label">Feedback</span>
+              <span class="spec-val">Dual Haptics</span>
+            </div>
+          </div>
+          <div class="cinema-footer-row">
+            <div class="cinema-price">
+              <span class="currency">₹</span><span class="amount">6,499</span>
+              <span class="old-price">₹7,999</span>
+            </div>
+            <button class="cinema-action-btn buy-now-video" data-name="Astro Bot Joyful Limited DualSense" data-price="₹6,499" data-img="Assets/controller-hero.png">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              <span>Equip Controller</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cinema Card 2: Cyber Pro Edition -->
+      <div class="cinema-card">
+        <div class="cinema-media-wrap">
+          <div class="cinema-hud-top">
+            <span class="cinema-badge pro"><span class="dot"></span> PRO ESPORTS TELEMETRY</span>
+            <div class="cinema-controls">
+              <button class="cinema-ctrl-btn video-mute-btn" data-video="vid-control" title="Toggle Sound">
+                <span class="sound-icon">🔇</span>
+              </button>
+              <button class="cinema-ctrl-btn video-play-btn" data-video="vid-control" title="Play / Pause">
+                <span class="play-icon">⏸️</span>
+              </button>
+            </div>
+          </div>
+          <video id="vid-control" src="Assets/PS_CONTROL.mp4" autoplay muted loop playsinline></video>
+          <div class="cinema-media-overlay"></div>
+        </div>
+        <div class="cinema-content">
+          <div class="cinema-tag-row">
+            <span class="cinema-edition cyber">CYBER ARENA PRO</span>
+            <span class="cinema-spec-pill">Hall Effect Sticks</span>
+          </div>
+          <h3 class="cinema-title">DualSense Cyber Edge Edition</h3>
+          <p class="cinema-desc">Equipped with optical-magnetic mechanical switches, adjustable trigger locks, and tournament-grade remappable rear paddles.</p>
+          <div class="cinema-specs-grid">
+            <div class="spec-node">
+              <span class="spec-label">Polling Rate</span>
+              <span class="spec-val">1000Hz Fast</span>
+            </div>
+            <div class="spec-node">
+              <span class="spec-label">Sticks</span>
+              <span class="spec-val">Zero-Drift Hall</span>
+            </div>
+            <div class="spec-node">
+              <span class="spec-label">Paddles</span>
+              <span class="spec-val">4x Remappable</span>
+            </div>
+          </div>
+          <div class="cinema-footer-row">
+            <div class="cinema-price">
+              <span class="currency">₹</span><span class="amount">7,299</span>
+              <span class="old-price">₹8,999</span>
+            </div>
+            <button class="cinema-action-btn buy-now-video" data-name="DualSense Cyber Edge Pro Controller" data-price="₹7,299" data-img="Assets/controller1.png">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              <span>Equip Controller</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-grid">
+        <!-- Left Col: Story & Pillars -->
+        <div class="about-info-col">
+          <div class="section-tag"><span class="tag-pulse"></span> THE ESPORTS STANDARD</div>
+          <h2 class="about-heading">Forged in Battle.<br><span class="gradient-text">Engineered for Dominance.</span>
+          </h2>
+          <p class="about-lead">At Thunder Gear, we build weapons for the milliseconds that divide legendary champions
+            from runner-ups. Every sensor curve, switch tension, and chassis angle is rigorously benchmarked alongside
+            tier-1 esports athletes.</p>
+
+          <div class="about-pillars">
+            <div class="pillar-item">
+              <div class="pillar-icon">⚡</div>
+              <div class="pillar-text">
+                <h4>0.12ms Gen-3 Optical Triggers</h4>
+                <p>Zero debounce delay and instant speed of light actuation with 90M click durability.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-icon">🎯</div>
+              <div class="pillar-text">
+                <h4>8000Hz HyperPolling Engine</h4>
+                <p>Transmits up to 8x more data per millisecond to deliver unprecedented pointer fluidity.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-icon">🛡️</div>
+              <div class="pillar-text">
+                <h4>49g Magnesium Exoskeleton</h4>
+                <p>Aerospace-grade structural rigidity engineered with ultra-low inertia for lightning flicks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Col: Live Telemetry & Pro Proof -->
+        <div class="about-telemetry-col">
+          <div class="telemetry-card">
+            <div class="telemetry-header">
+              <div class="telemetry-title">
+                <span class="live-dot"></span>
+                <span>TELEMETRY METRICS</span>
+              </div>
+              <span class="telemetry-badge">PRO V2.4</span>
+            </div>
+
+            <div class="telemetry-stats-grid">
+              <div class="tele-stat">
+                <span class="tele-val">8,000<small>Hz</small></span>
+                <span class="tele-lbl">Polling Rate</span>
+                <div class="tele-bar">
+                  <div class="tele-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+
+              <div class="tele-stat">
+                <span class="tele-val">&lt; 0.12<small>ms</small></span>
+                <span class="tele-lbl">Input Latency</span>
+                <div class="tele-bar">
+                  <div class="tele-fill" style="width: 98%;"></div>
+                </div>
+              </div>
+
+              <div class="tele-stat">
+                <span class="tele-val">49<small>g</small></span>
+                <span class="tele-lbl">Ultra Weight</span>
+                <div class="tele-bar">
+                  <div class="tele-fill" style="width: 95%;"></div>
+                </div>
+              </div>
+
+              <div class="tele-stat">
+                <span class="tele-val">90M</span>
+                <span class="tele-lbl">Switch Lifespan</span>
+                <div class="tele-bar">
+                  <div class="tele-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pro-endorsement">
+              <div class="endorse-badge">🏆 OFFICIAL ESPORTS PARTNER</div>
+              <p>Trusted in Tier-1 Global Tournaments across CS2, Valorant, Apex Legends & Rocket League.</p>
+              <div class="warranty-stamp">
+                <span>🛡️ 2-YEAR ZERO-LAG REPLACEMENT WARRANTY</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REDESIGNED MODERN AUTH MODALS ===== -->
+  <!-- LOGIN MODAL -->
+  <div id="login-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-card auth-card">
+
+      <div class="auth-header">
+        <div class="auth-logo-badge">⚡</div>
+        <h2>Welcome Back</h2>
+        <p class="modal-subtitle">Access your Thunder Gear battle station & saved loadouts</p>
+      </div>
+
+      <!-- Social Logins -->
+      <div class="social-auth-group">
+        <button type="button" class="social-auth-btn" id="login-google">
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <path fill="#EA4335"
+              d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.3 9 5 12 5z" />
+            <path fill="#4285F4"
+              d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.9z" />
+            <path fill="#FBBC05"
+              d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3 0-.8.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15.1s.7 5.4 1.9 7.8l3.7-2.9c0-.6 0-1.1 0-1.6z" />
+            <path fill="#34A853"
+              d="M12 23.5c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.3-6.4-5.2L1.9 16.5C3.7 20.2 7.5 23.5 12 23.5z" />
+          </svg>
+          <span>Google</span>
+        </button>
+        <button type="button" class="social-auth-btn" id="login-discord">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#5865F2">
+            <path
+              d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+          </svg>
+          <span>Discord</span>
+        </button>
+      </div>
+
+      <div class="auth-divider">
+        <span>OR WITH GAMER ID</span>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email or Gamer Tag</label>
+          <div class="input-with-icon">
+            <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <input type="email" id="login-email" placeholder="champion@esports.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="label-row">
+            <label for="login-password">Secret Key / Password</label>
+            <a href="#" class="forgot-link" id="forgot-password">Forgot?</a>
+          </div>
+          <div class="input-with-icon">
+            <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <input type="password" id="login-password" placeholder="••••••••" required>
+            <button type="button" class="pwd-toggle" aria-label="Toggle password visibility">👁️</button>
+          </div>
+        </div>
+
+        <button type="submit" class="modal-submit">
+          <span>Enter Battle Station</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </form>
+
+      <p class="modal-footer-text">New to the arena? <a href="#" id="show-signup">Create Gamer Account</a></p>
+    </div>
+  </div>
+
+  <!-- SIGN UP MODAL -->
+  <div id="signup-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-card auth-card">
+      <button id="signup-close" class="modal-close" aria-label="Close">&times;</button>
+
+      <div class="auth-header">
+        <div class="auth-logo-badge">⚡</div>
+        <h2>Join Thunder Elite</h2>
+        <p class="modal-subtitle">Unlock 15% discount, tournament drops & pro loadouts</p>
+      </div>
+
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="signup-phone">Phone Number</label>
+          <div class="input-with-icon">
+            <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg>
+            <input type="tel" id="signup-phone" placeholder="+91 9XXXXXXXXX" pattern="[0-9+\s]{10,15}" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-email">Gamer Email</label>
+          <div class="input-with-icon">
+            <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <input type="email" id="signup-email" placeholder="pro@thundergear.io" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-password">Create Password (Min 6 chars)</label>
+          <div class="input-with-icon">
+            <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <input type="password" id="signup-password" placeholder="••••••••" minlength="6" required>
+            <button type="button" class="pwd-toggle" aria-label="Toggle password visibility">👁️</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-confirm">Confirm Password</label>
+          <div class="input-with-icon">
+            <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <input type="password" id="signup-confirm" placeholder="••••••••" minlength="6" required>
+          </div>
+        </div>
+
+        <p id="signup-error" class="form-error"></p>
+        <button type="submit" class="modal-submit">
+          <span>Create Gamer Account ⚡</span>
+        </button>
+      </form>
+
+      <p class="modal-footer-text">Already a member? <a href="#" id="show-login">Sign In</a></p>
+    </div>
+  </div>
+
+  <!-- ===== REDESIGNED PREMIUM FOOTER ===== -->
+  <footer class="footer-master">
+    <!-- Newsletter VIP Banner -->
+    <div class="newsletter-strip">
+      <div class="newsletter-container">
+        <div class="newsletter-info">
+          <span class="newsletter-badge">⚡ VIP CLUB</span>
+          <h3>Join The Thunder Elite</h3>
+          <p>Get <strong>15% OFF</strong> your first order, private member flash drops, and tournament updates.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="event.preventDefault();">
+          <div class="newsletter-input-group">
+            <svg class="mail-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <input type="email" id="newsletter-email" placeholder="Enter your gamer email..." required>
+            <button type="submit" id="newsletter-btn" class="newsletter-btn">Subscribe ⚡</button>
+          </div>
+          <span class="newsletter-privacy">🛡️ No spam ever. Unsubscribe anytime.</span>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main Footer Multi-Column Grid -->
+    <div class="footer-main">
+      <div class="footer-container">
+        <!-- Col 1: Brand & Social -->
+        <div class="footer-col footer-col-brand">
+          <a href="#" class="footer-logo">
+            <img src="Assets/logo-h.png" alt="Thunder Logo">
+            <span class="footer-logo-text">THUNDER</span>
+          </a>
+          <p class="footer-tagline">Engineered for champions. Ultra-responsive gaming peripherals and battle-tested
+            hardware built for peak esports performance.</p>
+
+          <div class="social-links">
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Discord" title="Discord">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+              </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="X Twitter" title="X (Twitter)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="YouTube" title="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Instagram" title="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="https://twitch.tv" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Twitch" title="Twitch">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Shop & Categories -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Shop Arsenal</h4>
+          <ul class="footer-links">
+            <li><a href="#products" class="footer-link">Ultra-Lightweight Mice</a></li>
+            <li><a href="#products" class="footer-link">Optical Keyboards</a></li>
+            <li><a href="#products" class="footer-link">Pro Wireless Controllers</a></li>
+            <li><a href="#products" class="footer-link">Spatial 7.1 Headsets</a></li>
+            <li><a href="#products" class="footer-link">Pre-Built Battlestations</a></li>
+            <li><a href="#deals" class="footer-link">Limited Edition Drops</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Support & Software -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Support & Gear</h4>
+          <ul class="footer-links">
+            <li><a href="cart.html" class="footer-link">Track Your Order</a></li>
+            <li><a href="#about" class="footer-link">Thunder Synapse Software</a></li>
+            <li><a href="#about" class="footer-link">2-Year Zero-Lag Warranty</a></li>
+            <li><a href="#about" class="footer-link">Shipping & Global Delivery</a></li>
+            <li><a href="#about" class="footer-link">30-Day Returns Policy</a></li>
+            <li><a href="#about" class="footer-link">Esports Sponsorships</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Store & Contact -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Flagship Experience</h4>
+          <div class="footer-contact-info">
+            <div class="contact-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C2FF" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>3rd Floor, Citi Centre Mall, Mylapore, Chennai, Tamil Nadu 600004</span>
+            </div>
+            <div class="contact-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C2FF" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:support@thundergear.io">support@thundergear.io</a>
+            </div>
+            <div class="contact-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C2FF" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <span>+91-963-476-3090 (24/7 Hotline)</span>
+            </div>
+          </div>
+
+          <div class="payment-badges">
+            <span class="pay-pill">VISA</span>
+            <span class="pay-pill">MASTERCARD</span>
+            <span class="pay-pill">UPI</span>
+            <span class="pay-pill">RUPAY</span>
+            <span class="pay-pill">PAYPAL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="footer-copy">&copy; 2025 Thunder Gear Inc. (Portronics Digital Pvt. Ltd.). All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <span class="divider">•</span>
+          <a href="#">Terms of Service</a>
+          <span class="divider">•</span>
+          <a href="#">Security</a>
+          <span class="divider">•</span>
+          <a href="#">System Status</a>
+        </div>
+        <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+          <span>Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
